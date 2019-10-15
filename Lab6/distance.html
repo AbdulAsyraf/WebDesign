@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <link rel='stylesheet' href='format.css'>
   <title>Math Time</title>
   <script>
     function Calculate(){
@@ -31,16 +32,16 @@
     }
   </script>
 </head>
-<body>
+<body id='bods'>
   <p>Please fill the form</p>
 
-  <form name='distCalc'>
+  <form name='distCalc' id='borang'>
     <p>Enter X1 Value:<input type=text id='x1'></p>
     <p>Enter Y1 Value:<input type=text id='y1'></p>
     <p>Enter X2 Value:<input type=text id='x2'></p>
     <p>Enter Y2 Value:<input type=text id='y2'></p>
-    <input type=button value='Calculate' onclick='Calculate()'>
-    <input type=reset value='Clear'>
+    <p><input id='calcButton' type=button value='Calculate' onclick='Calculate()'>
+    <input id='clearButton' type=reset value='Clear'></p><br><br>
     <p>Date:<input type=text id='date' readonly></p>
     <p>Distance:<input type=text id ='res' name='result' readonly></p>
     <p>Sum:<input type=text id='sum' readonly></p>
