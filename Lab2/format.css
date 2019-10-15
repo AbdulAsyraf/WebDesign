@@ -1,0 +1,31 @@
+body{
+  background-color:#daf8e3;
+  font-family:monospace;
+}
+p.underline{
+  font-weight:bolder;
+  text-decoration:underline;
+}
+h1{
+  border:3px dotted;
+  border-color:#00c2c7;
+  background-color: #97ebdb;
+  text-align:center;
+}
+ul{
+  list-style-type: circle;
+}
+ol{
+  list-style-type:lower-greek;
+}
+a:link{
+  text-decoration:overline;
+  color:blue;
+}
+a:hover{
+  background-color:green;
+}
+a:visited{
+  text-decoration: line-through;
+  color:red;
+}

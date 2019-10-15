@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Drop Down</title>
+  <script>
+    function GoTo(site){
+      location.href = site;
+    }
+  </script>
+</head>
+<body>
+  <p>Select a site to browse<hr />
+  <form>
+    <select id='option' name='selection' size=1 onchange="GoTo(this.value)">
+      <option selected disabled hidden>--Please Select--</option>
+      <option value='http://ulearn.utem.edu.my'>ULearn</option>
+      <option value='http://ftmk.utem.edu.my'>FTMK</option>
+      <option value='http://www.utem.edu.my'>UTeM</option>
+    </select>
+  </form>
+</body>
+</html>

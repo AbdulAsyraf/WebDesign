@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confirmation</title>
+  <script type="text/javascript">
+    function fbButton(){
+      var answer = confirm("You are about to leave the site. Are you sure?");
+      if(answer){
+        window.location="http://www.facebook.com";
+      }
+      else{
+        doucment.write("Thanks for sticking around");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>My Page</h1>
+  <input id="broButt" type="button" value="Go to Facebook" onclick="fbButton();">
+</body>
+</html>

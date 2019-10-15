@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h1 id="title">Subject Code</h1>
+<p id="demo">Subject Name</p>
+
+<script type="text/Javascript">
+  document.getElementById('title').innerHTML = 'BITM2113';
+  document.getElementById('demo').innerHTML = 'WEB APPLICATION DEVELOPMENT';
+  document.getElementById('title').style.color = '#abe90b';
+  document.getElementById('demo').style.fontFamily = 'Sans-Serif';
+  document.getElementById('demo').style.textDecoration = 'underline';
+
+  // var name = "Boy";
+  // var matricNo = "B0317104452";
+
+
+window.alert("Are you in the right class?");
+window.confirm("Do you want to go into the class?");
+var name = window.prompt("What is your name?", name);
+var matricNo = window.prompt("What is your Matric Number?", matricNo)
+
+document.write('<p id=\'test\'>Name: ' + name + '</p>');
+document.write("Matric No: " + matricNo);
+document.getElementById('test').style.color = '#3b4add';
+</script>
+</body>
+</html>

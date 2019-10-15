@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <title>Magic</title>
+</head>
+<body>
+  <h1 id="title">Magic Tricks</h1>
+  <p id="para">This is a magic trick</p>
+
+  <input type="button" id="changeText" onclick = "document.getElementById('para').innerHTML = 'This is another magic trick'" value="Change Text"></input>
+  <input type="button" id="changeFont" onclick = "document.getElementById('title').style.fontFamily = 'Impact'" value="Change Font"></input>
+  <input type="button" id="changeColor" onclick = "document.getElementById('para').style.color = '#e91e63'" value="Change Color"></input>
+  <input type="button" id="changeWeight" onclick = "document.getElementById('para').style.fontWeight = 'bolder'" value="Change Weight"></input>
+  <input type="button" id="changeSize" onclick = "document.getElementById('para').style.fontSize = '140px'" value="Change Size"></input>
+  <input type="button" id="changeVisibility" onclick = "changeVisibility()" value="Hide"></input>
+  <script type="text/Javascript">
+    function changeVisibility(){
+      var x = document.getElementById('para');
+      var y = document.getElementById('changeVisibility');
+      if (x.style.display === "none"){
+        x.style.display = "block";
+        y.value = "Hide";
+      }
+      else{
+        x.style.display = "none";
+        y.value = "Show";
+      }
+    }
+  </script>
+</body>

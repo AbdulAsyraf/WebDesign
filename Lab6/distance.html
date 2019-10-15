@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <title>Math Time</title>
+  <script>
+    function Calculate(){
+      var x1 = parseFloat(document.getElementById('x1').value);
+      var y1 = parseFloat(document.getElementById('y1').value);
+      var x2 = parseFloat(document.getElementById('x2').value);
+      var y2 = parseFloat(document.getElementById('y2').value);
+      // var numArr = new array();
+      // numArr = [x1, y1, x2, y2];
+      var res = Math.sqrt(Math.pow((y2-y1),2) + Math.pow((x2-x1),2));
+      var d = new Date();
+      var day = d.getDate();
+      var month = d.getMonth();
+      var year = d.getFullYear();
+      var sum = x1 + x2 + y1 + y2;
+      var average = sum/4;
+      var product = x1 * x2 * y1 * y2;
+      var max = Math.max(x1, x2, y1, y2);
+      var min = Math.min(x1, x2, y1, y2);
+
+
+      document.getElementById('res').value = res;
+      document.getElementById('date').value = day + "/" + month + "/" + year;
+      document.getElementById('sum').value = sum;
+      document.getElementById('ave').value = average;
+      document.getElementById('prod').value = product;
+      document.getElementById('max').value = max;
+      document.getElementById('min').value = min;
+    }
+  </script>
+</head>
+<body>
+  <p>Please fill the form</p>
+
+  <form name='distCalc'>
+    <p>Enter X1 Value:<input type=text id='x1'></p>
+    <p>Enter Y1 Value:<input type=text id='y1'></p>
+    <p>Enter X2 Value:<input type=text id='x2'></p>
+    <p>Enter Y2 Value:<input type=text id='y2'></p>
+    <input type=button value='Calculate' onclick='Calculate()'>
+    <input type=reset value='Clear'>
+    <p>Date:<input type=text id='date' readonly></p>
+    <p>Distance:<input type=text id ='res' name='result' readonly></p>
+    <p>Sum:<input type=text id='sum' readonly></p>
+    <p>Average:<input type=text id='ave' readonly></p>
+    <p>Product:<input type=text id='prod' readonly></p>
+    <p>Max:<input type=text id='max' readonly></p>
+    <p>Min:<input type=text id='min' readonly></p>
+  </form>
+</body>
+</html>

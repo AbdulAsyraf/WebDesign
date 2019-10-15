@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <title>Switch case things</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var number = prompt("Please input a number", number);
+    switch (number){
+      case(number = "1"):{
+        document.write("Gratz! You won an Ipad. Please enter your banking info to get your Ipad");
+        document.write("<br><image src='image/ipad.jpg'");
+        break;
+      }
+      case(number = "2"):{
+        document.write("Gratz! You won an Iphone. Please enter your banking info to get your Iphone");
+        document.write("<br><image src='image/iphone.jpg'");
+        break;
+      }
+      case(number = "3"):{
+        document.write("Gratz! You won an Ipod. Please enter your banking info to get your Ipod");
+        document.write("<br><image src='image/ipod.jpg'");
+        break;
+      }
+      default:{
+        alert("Sorry you didn't win anything. Please enter your banking info for consolation prize")
+      }
+    }
+  </script>
+</body>
+</html>

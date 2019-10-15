@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5</title>
+    <meta name='viewport' content='width = device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='lab3.css'>
+  </head>
+  <body>
+
+    <header>
+      <h1>BITM 2113 : Web Application Development</h1>
+    </header>
+
+    <nav>
+      <ul>Other Subject:
+        <li><a href="viideo.html">BITM 1113: Multimedia System</a></li>
+        <li><a href="media.html">BITM 2123: Audio Video Technology</a></li>
+        <li><a href="media.html">BITM 3113 : Virtual Reality</a></li>
+        <li><a href="semantic.html">Home Page</a></li>
+        <li><a href="form.html">Registration Form</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h2>Registration Form</h2>
+      <section>
+        <form action="" method="POST">
+          <p>Local Date and Time<input type="datetime-local" name="input"></p>
+          <p>Day<input type="date" name="input"></p>
+          <p>Month<input type="month" name="input"></p>
+          <p>Time<input type="time" name="input"></p>
+          <p>Select Number<input type="number" min=0 max=10 step=1 value=5 name="input"></p>
+          <p>Select Range<input type="range" name="input"></p>
+          <p>Favorite Color><input type='color' name="color"></p>
+          <p>Favorite Browser<input list="browsers">
+          <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Mozilla Firefox">
+            <option value="Google Chrome">
+            <option value="Safari">
+            <option value="Opera">
+          </datalist>
+        </form>
+      </section>
+    </article>
+    <footer>
+      <p>&copy; 2019 Abdul Asyraf, FTMK, UTeM. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>

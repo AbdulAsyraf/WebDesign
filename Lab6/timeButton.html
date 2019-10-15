@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <title>Time</title>
+  <script>
+    function myTime(){
+      var d = new Date();
+      var time = d.getHours();
+      var m = d.getMinutes();
+      var s = d.getSeconds();
+      var ampm = "AM";
+      var day = d.getDate();
+      var month = d.getMonth() + 1;
+      var year = d.getFullYear();
+      var x = document.getElementById('colorChoice');
+      var defaultValue = x.defaultValue;
+      var currentValue = x.value;
+
+      if (time > 11){
+        ampm = "PM";
+      }
+
+      if(defaultValue == currentValue){
+        document.getElementById('msg').innerHTML = "Current color is " + currentValue + " which is the same as the default value";
+      }
+      else{
+        document.getElementById('msg').innerHTML = '';
+        document.getElementById('bgcolor').style.backgroundColor = currentValue;
+      }
+
+      document.form.outputTime.value = time + ":" + m + ":" + s + " " + ampm;
+      document.form.outputDate.value = day + "/" + month + "/" + year;
+    }
+  </script>
+</head>
+<body id='bgcolor'>
+  <p id='msg'></p>
+  <form name='form'>
+    <input type=button value='Clickerino' id='getTime' onclick=myTime()></input>
+    <input type=color id='colorChoice' value='#ffffff'></input>
+    <input type=text size=12 name='outputTime'></input>
+    <input type=text size=12 name='outputDate'></input><br><br>
+
+    <input type=reset onclick="document.getElementById('msg').innerHTML = '';document.getElementById('bgcolor').style.backgroundColor = '#ffffff'">
+  </form>
+<body>
+</html>
