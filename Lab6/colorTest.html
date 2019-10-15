@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <title>Color Test</title>
+  <script>
+    function colorChange(color){
+      if (color == 'cyan'){
+        document.getElementById('bods').style.backgroundColor = "cyan";
+      }else if(color == 'white'){
+        document.getElementById('bods').style.backgroundColor = "white";
+      }
+    }
+  </script>
+</head>
+<body id='bods'>
+  <form id='myForm'>
+    <select name='selection' onchange='colorChange(this.value)'>
+      <option value='cyan'>Cyan</option>
+      <option value='white'>White</option>
+    </select>
+  </form>
+</body>
+</html>

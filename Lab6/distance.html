@@ -3,13 +3,43 @@
   <link rel='stylesheet' href='format.css'>
   <title>Math Time</title>
   <script>
+    function CheckInput(){
+      var x1 = document.getElementById('x1').value;
+      var x2 = document.getElementById('x2').value;
+      var y1 = document.getElementById('y1').value;
+      var y2 = document.getElementById('y2').value;
+
+      if(x1 == '' || x2 == '' || y1 == '' || y2 == ''){
+        window.alert("One or more values are missing. Please re-enter the values");
+        document.getElementById('x1').focus();
+        document.getElementById('x1').select();
+      }
+      else if(isNaN(x1) || isNaN(x2) || isNaN(y1) || isNaN(y2)){
+        window.alert("One or more values are not numbers. Please re-enter the values");
+        document.getElementById('x1').focus();
+        document.getElementById('x1').select();
+      }
+      else{
+        Calculate();
+      }
+    }
+
+    function getChecked(){
+      var favs = "";
+      var c = document.distCalc.choice;
+      for (var j = 0; j < c.length; j++){
+        if (c[j].checked){
+          favs += c[j].value + " ";
+        }
+      }
+      return favs;
+    }
+
     function Calculate(){
       var x1 = parseFloat(document.getElementById('x1').value);
       var y1 = parseFloat(document.getElementById('y1').value);
       var x2 = parseFloat(document.getElementById('x2').value);
       var y2 = parseFloat(document.getElementById('y2').value);
-      // var numArr = new array();
-      // numArr = [x1, y1, x2, y2];
       var res = Math.sqrt(Math.pow((y2-y1),2) + Math.pow((x2-x1),2));
       var d = new Date();
       var day = d.getDate();
@@ -21,6 +51,7 @@
       var max = Math.max(x1, x2, y1, y2);
       var min = Math.min(x1, x2, y1, y2);
 
+      var favs = getChecked();
 
       document.getElementById('res').value = res;
       document.getElementById('date').value = day + "/" + month + "/" + year;
@@ -29,26 +60,70 @@
       document.getElementById('prod').value = product;
       document.getElementById('max').value = max;
       document.getElementById('min').value = min;
+      document.getElementById('fav').value = favs;
+    }
+
+    function colorChange(color){
+        if (color == 'cyan'){
+          document.getElementById('bods').style.backgroundColor = "cyan";
+        }else if (color == 'red'){
+          document.getElementById('bods').style.backgroundColor = "red";
+        }else if (color == 'white'){
+          document.getElementById('bods').style.backgroundColor = "white";
+        }else if (color == 'magenta'){
+          document.getElementById('bods').style.backgroundColor = 'magenta';
+        }else if (color == 'grey'){
+          document.getElementById('bods').style.backgroundColor = 'grey';
+        }
     }
   </script>
 </head>
 <body id='bods'>
+  <form class='corner' id='colorForm'>
+    <select id='option' name='option' onChange='colorChange(this.value)'>
+      <option value='cyan'>Cyan</option>
+      <option value='red'>Red</option>
+      <option value='white'>White</option>
+      <option value='magenta'>Magenta</option>
+      <option value='grey'>Grey</option>
+    </select>
+  </form>
   <p>Please fill the form</p>
 
   <form name='distCalc' id='borang'>
-    <p>Enter X1 Value:<input type=text id='x1'></p>
-    <p>Enter Y1 Value:<input type=text id='y1'></p>
-    <p>Enter X2 Value:<input type=text id='x2'></p>
-    <p>Enter Y2 Value:<input type=text id='y2'></p>
-    <p><input id='calcButton' type=button value='Calculate' onclick='Calculate()'>
-    <input id='clearButton' type=reset value='Clear'></p><br><br>
-    <p>Date:<input type=text id='date' readonly></p>
-    <p>Distance:<input type=text id ='res' name='result' readonly></p>
-    <p>Sum:<input type=text id='sum' readonly></p>
-    <p>Average:<input type=text id='ave' readonly></p>
-    <p>Product:<input type=text id='prod' readonly></p>
-    <p>Max:<input type=text id='max' readonly></p>
-    <p>Min:<input type=text id='min' readonly></p>
+    <div id='distInput'>
+      <p>Enter X1 Value:<input type=text id='x1'></p>
+      <p>Enter Y1 Value:<input type=text id='y1'></p>
+      <p>Enter X2 Value:<input type=text id='x2'></p>
+      <p>Enter Y2 Value:<input type=text id='y2'></p>
+    </div>
+    Favorite Letter:
+    <div id='boxInput'>
+      <input type=checkbox name='choice' value='A'>A
+      <input type=checkbox name='choice' value='B'>B
+      <input type=checkbox name='choice' value='C'>C
+      <input type=checkbox name='choice' value='D'>D
+      <input type=checkbox name='choice' value='E'>E
+      <input type=checkbox name='choice' value='F'>F
+      <input type=checkbox name='choice' value='G'>G
+      <input type=checkbox name='choice' value='H'>H
+      <input type=checkbox name='choice' value='I'>I
+      <input type=checkbox name='choice' value='J'>J
+    </div>
+    <div id='buttons'>
+      <p><input id='calcButton' type=button value='Calculate' onclick='CheckInput()'>
+      <input id='clearButton' type=reset value='Clear'></p><br><br>
+    </div>
+    <div id='outputs'>
+      <p>Date:<input type=text id='date' readonly></p>
+      <p>Distance:<input type=text id ='res' name='result' readonly></p>
+      <p>Sum:<input type=text id='sum' readonly></p>
+      <p>Average:<input type=text id='ave' readonly></p>
+      <p>Product:<input type=text id='prod' readonly></p>
+      <p>Max:<input type=text id='max' readonly></p>
+      <p>Min:<input type=text id='min' readonly></p>
+      <p>Favorite Letter:<input type=text id='fav' readonly></p>
+    </div>
   </form>
 </body>
 </html>

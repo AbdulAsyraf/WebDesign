@@ -1,15 +1,31 @@
 #bods{
-  background-color: #FAE3D9;
+  background-color:#BBDED6;
+}
+
+#borang{
   width:25%;
   margin-left:37.5%;
-  margin-right:37.5%;
-  color:#61C0BF;
+  color:#00000;
 }
 
-input{
-  float:right
+#distInput input{
+  float:right;
 }
 
-#calcButton #clearButton{
+#boxInput{
+  float:right;
+  width:40%;
+}
+
+#buttons{
+  width:100%;
   clear:both;
+}
+
+#buttons input{
+  width:49%;
+}
+
+#outputs input{
+  float:right;
 }
