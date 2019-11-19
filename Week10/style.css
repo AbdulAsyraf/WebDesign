@@ -1,0 +1,46 @@
+header h2{
+  text-align:center;
+}
+
+img{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:600px;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+}
+
+body h1,
+body h2{
+  text-align: center;
+}
+
+li{
+  float:left;
+}
+
+li a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 16px;
+}
+
+li a:hover{
+  background-color: #dddddd;
+}
+
+li a:visited{
+  color:black;
+  text-decoration: none;
+}
+
+#kaki{
+  text-align: right;
+  color:blue;
+}
